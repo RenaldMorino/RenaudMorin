@@ -10,17 +10,20 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
+import Palette from "./Components/Palette";
+
 const theme = createTheme({});
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    background: "#080708",
-    color: "#F5F3BB",
+    background: Palette.main.darkBackground,
+    color: Palette.main.lightYellow,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     height: "100%",
-    outline: "10px solid #F5F3BB",
+    outline: "10px solid",
     outlineOffset: "-10px",
+    outlineColor: Palette.main.lightYellow,
     // borderRadius: "5px",
 
     "-webkit-touch-callout": "none" /* iOS Safari */,
@@ -56,16 +59,20 @@ const useStyles = makeStyles((theme) => ({
   },
 
   iconColor: {
-    color: "#F5F3BB",
+    color: Palette.main.lightYellow,
   },
 
   bottomTextContainer: {
     fontFamily: "Sonsie One",
     position: "absolute",
-    color: "#90DDF0",
+    color: Palette.main.lightBlue,
     width: "2rem",
     left: "calc(95vw - 4rem)",
     top: "calc(95vh - 1rem)",
+  },
+
+  tableCellCustomColor: {
+    borderColor: Palette.main.flashyPink + " !important",
   },
 }));
 
@@ -82,22 +89,22 @@ const App = () => {
         <div className={classes.contactMeContainer}>
           <Table>
             <TableRow>
-              <TableCell>
+              <TableCell className={classes.tableCellCustomColor}>
                 <a href="mailto:renaudmorinwork@gmail.com" target="_blank" rel="noreferrer">
                   <EmailIcon className={classes.iconColor} />
                 </a>
               </TableCell>
-              <TableCell>
+              <TableCell className={classes.tableCellCustomColor}>
                 <a href="https://github.com/RenaldMorino" target="_blank" rel="noreferrer">
                   <GitHubIcon className={classes.iconColor} />
                 </a>
               </TableCell>
-              <TableCell>
+              <TableCell className={classes.tableCellCustomColor}>
                 <a href="https://twitter.com/RenaldiniMorino" target="_blank" rel="noreferrer">
                   <TwitterIcon className={classes.iconColor} />
                 </a>
               </TableCell>
-              <TableCell>
+              <TableCell className={classes.tableCellCustomColor}>
                 <a href="https://www.linkedin.com/in/renaud-morin-b6a9b113a/" target="_blank" rel="noreferrer">
                   <LinkedInIcon className={classes.iconColor} />
                 </a>
