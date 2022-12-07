@@ -59,7 +59,14 @@ const useStyles = makeStyles((theme) => ({
     color: "#F5F3BB",
   },
 
-  bottomTextContainer: {},
+  bottomTextContainer: {
+    fontFamily: "Sonsie One",
+    position: "absolute",
+    color: "#90DDF0",
+    width: "2rem",
+    left: "calc(95vw - 4rem)",
+    top: "calc(95vh - 1rem)",
+  },
 }));
 
 const App = () => {
@@ -98,9 +105,7 @@ const App = () => {
             </TableRow>
           </Table>
         </div>
-        {/* <div className={classes.bottomTextContainer}>
-
-        </div> */}
+        <div className={classes.bottomTextContainer}>boo</div>
       </div>
     </ThemeProvider>
   );
