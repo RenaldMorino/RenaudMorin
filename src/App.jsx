@@ -93,26 +93,26 @@ const App = () => {
         <div className={classes.contactMeContainer}>
           <Table>
             <TableRow>
-              <TableCell className={classes.tableCellCustomColor} >
-                <a href="mailto:renaudmorinwork@gmail.com" target="_blank" rel="noreferrer">
+              <a href="mailto:renaudmorinwork@gmail.com" target="_blank" rel="noreferrer">
+                <TableCell className={classes.tableCellCustomColor} >
                   <EmailIcon className={classes.iconColor} />
-                </a>
-              </TableCell>
-              <TableCell className={classes.tableCellCustomColor}>
-                <a href="https://github.com/RenaldMorino" target="_blank" rel="noreferrer">
+                </TableCell>
+              </a>
+              <a href="https://github.com/RenaldMorino" target="_blank" rel="noreferrer">
+                <TableCell className={classes.tableCellCustomColor}>
                   <GitHubIcon className={classes.iconColor} />
-                </a>
-              </TableCell>
-              <TableCell className={classes.tableCellCustomColor}>
-                <a href="https://twitter.com/RenaldiniMorino" target="_blank" rel="noreferrer">
+                </TableCell>
+              </a>
+              <a href="https://twitter.com/RenaldiniMorino" target="_blank" rel="noreferrer">
+                <TableCell className={classes.tableCellCustomColor}>
                   <TwitterIcon className={classes.iconColor} />
-                </a>
-              </TableCell>
-              <TableCell className={classes.tableCellCustomColor}>
-                <a href="https://www.linkedin.com/in/renaud-morin-b6a9b113a/" target="_blank" rel="noreferrer">
+                </TableCell>
+              </a>
+              <a href="https://www.linkedin.com/in/renaud-morin-b6a9b113a/" target="_blank" rel="noreferrer">
+                <TableCell className={classes.tableCellCustomColor}>
                   <LinkedInIcon className={classes.iconColor} />
-                </a>
-              </TableCell>
+                </TableCell>
+              </a>
             </TableRow>
           </Table>
         </div>
