@@ -15,6 +15,7 @@ import Konami from "react-konami-code";
 import WinSound from "./Assets/Sounds/8-bit-victory-sound-101319.mp3";
 import { ReactComponent as EasterEggTopRightIcon } from "./Assets/Icons/easter-egg-design.svg";
 import { motion } from "framer-motion";
+import KonamiModal from "./Components/KonamiModal";
 
 // Hooks
 import useSound from "use-sound";
@@ -32,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     outline: "10px solid",
     outlineOffset: "-10px",
     outlineColor: Palette.main.lightYellow,
-    // borderRadius: "5px",
 
     "-webkit-touch-callout": "none" /* iOS Safari */,
     "-webkit-user-select": "none" /* Safari */,
@@ -113,6 +113,7 @@ const App = () => {
   const [playWinSound] = useSound(WinSound, { volume: 0.025 });
   const [konamiCompleted, setKonamiCompleted] = useState(false);
   const [eggClicked, setEggClicked] = useState(false);
+  const [konamiModalOpened, setKonamiModalOpened] = useState(false);
 
   const handleKonami = () => {
     setKonamiCompleted(true);
@@ -121,6 +122,7 @@ const App = () => {
 
   const handleEggClick = () => {
     setEggClicked(true);
+    setKonamiModalOpened(!konamiModalOpened);
   };
 
   return (
@@ -131,27 +133,32 @@ const App = () => {
         <div className={classes.ipaTextContainer}>/ʁəno/</div>
 
         {konamiCompleted && (
-          <div
-            className={`${classes.easterEggTopRightIcon} ${eggClicked ? classes.easterEggDarkClicked : ""}`}
-            onClick={() => handleEggClick()}
-          >
-            <motion.div
-              animate={{
-                rotate: !eggClicked
-                  ? [0, -35, 45, -25, 35, -15, 15, -5, 5]
-                  : [0],
-              }}
-              transition={{
-                repeat: Infinity,
-                repeatDelay: 0,
-                duration: 1,
-                stiffness: 100,
-              }}
+          <>
+            <div
+              className={`${classes.easterEggTopRightIcon} ${eggClicked ? classes.easterEggDarkClicked : ""}`}
+              onClick={() => handleEggClick()}
             >
-              <EasterEggTopRightIcon />
-            </motion.div>
-          </div>
-          //<EasterEggButton className={classes.easterEggTopRightIcon} />
+              <motion.div
+                animate={{
+                  rotate: !eggClicked
+                    ? [0, -35, 45, -25, 35, -15, 15, -5, 5]
+                    : [0],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  repeatDelay: Math.floor(Math.random() * (8 - 2 + 1) + 2),
+                  duration: 1,
+                  stiffness: 100,
+                }}
+              >
+                <EasterEggTopRightIcon />
+              </motion.div>
+            </div>
+            {/* <EasterEggButton className={classes.easterEggTopRightIcon} /> */}
+            {konamiModalOpened && (
+              <KonamiModal isOpened={konamiModalOpened} handleClose={() => setKonamiModalOpened(false)} />
+            )}
+          </>
         )}
 
         <div className={classes.contactMeContainer}>
