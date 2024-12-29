@@ -73,6 +73,10 @@ const useStyles = makeStyles((theme) => ({
 
   tableCellCustomColor: {
     borderColor: Palette.main.flashyPink + " !important",
+    borderWidth: "1px",
+    "&:hover": {
+      borderWidth: "5px",
+    }
   },
 }));
 
@@ -89,7 +93,7 @@ const App = () => {
         <div className={classes.contactMeContainer}>
           <Table>
             <TableRow>
-              <TableCell className={classes.tableCellCustomColor}>
+              <TableCell className={classes.tableCellCustomColor} >
                 <a href="mailto:renaudmorinwork@gmail.com" target="_blank" rel="noreferrer">
                   <EmailIcon className={classes.iconColor} />
                 </a>
