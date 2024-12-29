@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   contactMeContainer: {
-    paddingTop: "calc(75px + 0.25vw + 15vh);",
+    paddingTop: "calc(15vh - 0.25vw);",
   },
 
   iconColor: {
