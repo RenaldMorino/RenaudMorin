@@ -1,4 +1,4 @@
-import { createTheme, TableCell, ThemeProvider } from "@mui/material";
+import { createTheme, duration, TableCell, ThemeProvider } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import "@fontsource/sonsie-one";
 import "@fontsource/raleway";
@@ -11,6 +11,15 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 import Palette from "./Components/Palette";
+import Konami from "react-konami-code";
+import WinSound from "./Assets/Sounds/8-bit-victory-sound-101319.mp3";
+import { ReactComponent as EasterEggTopRightIcon } from "./Assets/Icons/easter-egg-design.svg";
+import { motion } from "framer-motion";
+
+// Hooks
+import useSound from "use-sound";
+import { useState } from "react";
+import EasterEggButton from "./Components/EasterEggButton";
 
 const theme = createTheme({});
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   contactMeContainer: {
-    paddingTop: "calc(75px + 0.25vw + 15vh);",
+    paddingTop: "calc(15vh);",
   },
 
   iconColor: {
@@ -74,10 +83,42 @@ const useStyles = makeStyles((theme) => ({
   tableCellCustomColor: {
     borderColor: Palette.main.flashyPink + " !important",
   },
+
+  easterEggTopRightIcon: {
+    position: "absolute",
+    top: "30px",
+    right: "30px",
+    width: "auto",
+    height: "auto",
+    cursor: "pointer",
+    "& svg": {
+      fill: Palette.main.lightYellow,
+      width: "5rem",
+      height: "5rem",
+    },
+  },
+
+  easterEggDarkClicked: {
+    "& svg": {
+      fill: Palette.main.darkAccent + " !important",
+    },
+  },
 }));
 
 const App = () => {
   const classes = useStyles();
+  const [playWinSound] = useSound(WinSound, { volume: 0.025 });
+  const [konamiCompleted, setKonamiCompleted] = useState(false);
+  const [eggClicked, setEggClicked] = useState(false);
+
+  const handleKonami = () => {
+    setKonamiCompleted(true);
+    playWinSound();
+  };
+
+  const handleEggClick = () => {
+    setEggClicked(true);
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -86,26 +127,66 @@ const App = () => {
         <div className={classes.subtitleTextContainer}>I'm Renaud.</div>
         <div className={classes.ipaTextContainer}>/ʁəno/</div>
 
+        {konamiCompleted && (
+          <div
+            className={`${classes.easterEggTopRightIcon} ${eggClicked ? classes.easterEggDarkClicked : ""}`}
+            onClick={() => handleEggClick()}
+          >
+            <motion.div
+              animate={{
+                rotate: !eggClicked
+                  ? [0, -35, 45, -25, 35, -15, 15, -5, 5]
+                  : [0],
+              }}
+              transition={{
+                repeat: Infinity,
+                repeatDelay: 0,
+                duration: 1,
+                stiffness: 100,
+              }}
+            >
+              <EasterEggTopRightIcon />
+            </motion.div>
+          </div>
+          //<EasterEggButton className={classes.easterEggTopRightIcon} />
+        )}
+
         <div className={classes.contactMeContainer}>
           <Table>
             <TableRow>
               <TableCell className={classes.tableCellCustomColor}>
-                <a href="mailto:renaudmorinwork@gmail.com" target="_blank" rel="noreferrer">
+                <a
+                  href="mailto:renaudmorinwork@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <EmailIcon className={classes.iconColor} />
                 </a>
               </TableCell>
               <TableCell className={classes.tableCellCustomColor}>
-                <a href="https://github.com/RenaldMorino" target="_blank" rel="noreferrer">
+                <a
+                  href="https://github.com/RenaldMorino"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <GitHubIcon className={classes.iconColor} />
                 </a>
               </TableCell>
               <TableCell className={classes.tableCellCustomColor}>
-                <a href="https://twitter.com/RenaldiniMorino" target="_blank" rel="noreferrer">
+                <a
+                  href="https://twitter.com/RenaldiniMorino"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <TwitterIcon className={classes.iconColor} />
                 </a>
               </TableCell>
               <TableCell className={classes.tableCellCustomColor}>
-                <a href="https://www.linkedin.com/in/renaud-morin-b6a9b113a/" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.linkedin.com/in/renaud-morin-b6a9b113a/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <LinkedInIcon className={classes.iconColor} />
                 </a>
               </TableCell>
@@ -113,6 +194,7 @@ const App = () => {
           </Table>
         </div>
         <div className={classes.bottomTextContainer}>boo</div>
+        <Konami action={handleKonami} />
       </div>
     </ThemeProvider>
   );
