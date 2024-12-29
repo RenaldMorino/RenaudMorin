@@ -67,8 +67,8 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     color: Palette.main.lightBlue,
     width: "2rem",
-    left: "calc(95vw - 4rem)",
-    top: "calc(95vh - 1rem)",
+    right: "10vw",
+    bottom: "5vh",
   },
 
   tableCellCustomColor: {
