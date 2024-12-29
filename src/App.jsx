@@ -1,4 +1,4 @@
-import { createTheme, duration, TableCell, ThemeProvider } from "@mui/material";
+import { createTheme, TableCell, ThemeProvider } from "@mui/material";
 import makeStyles from "@mui/styles/makeStyles";
 import "@fontsource/sonsie-one";
 import "@fontsource/raleway";
@@ -19,7 +19,6 @@ import { motion } from "framer-motion";
 // Hooks
 import useSound from "use-sound";
 import { useState } from "react";
-import EasterEggButton from "./Components/EasterEggButton";
 
 const theme = createTheme({});
 const useStyles = makeStyles((theme) => ({
