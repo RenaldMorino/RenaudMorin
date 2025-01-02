@@ -4,6 +4,7 @@ import makeStyles from '@mui/styles/makeStyles'
 import '@fontsource/sonsie-one'
 import '@fontsource/raleway'
 import '@fontsource/noto-serif'
+import { track } from '@vercel/analytics'
 
 // Icons
 import EmailIcon from '@mui/icons-material/Email'
@@ -120,6 +121,7 @@ const App = () => {
   const handleKonami = () => {
     setKonamiCompleted(true)
     playWinSound()
+    track('konami-code-completed')
   }
 
   const handleEggClick = () => {
