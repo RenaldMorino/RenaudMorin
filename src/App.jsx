@@ -1,14 +1,17 @@
+// Packages
 import { createTheme, TableCell, ThemeProvider, Table, TableRow } from '@mui/material'
 import makeStyles from '@mui/styles/makeStyles'
 import '@fontsource/sonsie-one'
 import '@fontsource/raleway'
 import '@fontsource/noto-serif'
 
+// Icons
 import EmailIcon from '@mui/icons-material/Email'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
+// Components
 import Palette from './Components/Palette'
 import Konami from 'react-konami-code'
 import WinSound from './Assets/Sounds/8-bit-victory-sound-101319.mp3'
