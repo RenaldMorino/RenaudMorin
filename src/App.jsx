@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
     borderWidth: "1px",
     "&:hover": {
       borderWidth: "5px",
-    }
+    },
   },
 
   easterEggTopRightIcon: {
@@ -111,9 +111,9 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
   const [playWinSound] = useSound(WinSound, { volume: 0.025 });
-  const [konamiCompleted, setKonamiCompleted] = useState(false);
+  const [konamiCompleted, setKonamiCompleted] = useState(true);
   const [eggClicked, setEggClicked] = useState(false);
-  const [konamiModalOpened, setKonamiModalOpened] = useState(false);
+  const [konamiModalOpened, setKonamiModalOpened] = useState(true);
 
   const handleKonami = () => {
     setKonamiCompleted(true);
@@ -156,30 +156,48 @@ const App = () => {
             </div>
             {/* <EasterEggButton className={classes.easterEggTopRightIcon} /> */}
             {konamiModalOpened && (
-              <KonamiModal isOpened={konamiModalOpened} handleClose={() => setKonamiModalOpened(false)} />
+              <KonamiModal
+                isOpened={konamiModalOpened}
+                handleClose={() => setKonamiModalOpened(false)}
+              />
             )}
           </>
         )}
-
         <div className={classes.contactMeContainer}>
           <Table>
             <TableRow>
-              <a href="mailto:renaudmorinwork@gmail.com" target="_blank" rel="noreferrer">
-                <TableCell className={classes.tableCellCustomColor} >
+              <a
+                href="mailto:renaudmorinwork@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <TableCell className={classes.tableCellCustomColor}>
                   <EmailIcon className={classes.iconColor} />
                 </TableCell>
               </a>
-              <a href="https://github.com/RenaldMorino" target="_blank" rel="noreferrer">
+              <a
+                href="https://github.com/RenaldMorino"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <TableCell className={classes.tableCellCustomColor}>
                   <GitHubIcon className={classes.iconColor} />
                 </TableCell>
               </a>
-              <a href="https://twitter.com/RenaldiniMorino" target="_blank" rel="noreferrer">
+              <a
+                href="https://twitter.com/RenaldiniMorino"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <TableCell className={classes.tableCellCustomColor}>
                   <TwitterIcon className={classes.iconColor} />
                 </TableCell>
               </a>
-              <a href="https://www.linkedin.com/in/renaud-morin-b6a9b113a/" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.linkedin.com/in/renaud-morin-b6a9b113a/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <TableCell className={classes.tableCellCustomColor}>
                   <LinkedInIcon className={classes.iconColor} />
                 </TableCell>
