@@ -40,83 +40,85 @@ const BooSoundSystem = ({ children }) => {
   const players = []
   const stoppers = []
 
+  const getRandVolume = () => Math.random() * (maxVolume - minVolume) + minVolume
+
   const [playBoo1, { stop: stopBoo1 }] = useSound(BooSound1, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo2, { stop: stopBoo2 }] = useSound(BooSound2, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo3, { stop: stopBoo3 }] = useSound(BooSound3, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo4, { stop: stopBoo4 }] = useSound(BooSound4, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo5, { stop: stopBoo5 }] = useSound(BooSound5, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo6, { stop: stopBoo6 }] = useSound(BooSound6, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo7, { stop: stopBoo7 }] = useSound(BooSound7, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo8, { stop: stopBoo8 }] = useSound(BooSound8, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo9, { stop: stopBoo9 }] = useSound(BooSound9, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo10, { stop: stopBoo10 }] = useSound(BooSound10, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo11, { stop: stopBoo11 }] = useSound(BooSound11, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo12, { stop: stopBoo12 }] = useSound(BooSound12, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo13, { stop: stopBoo13 }] = useSound(BooSound13, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo14, { stop: stopBoo14 }] = useSound(BooSound14, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo15, { stop: stopBoo15 }] = useSound(BooSound15, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo16, { stop: stopBoo16 }] = useSound(BooSound16, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo17, { stop: stopBoo17 }] = useSound(BooSound17, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo18, { stop: stopBoo18 }] = useSound(BooSound18, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo19, { stop: stopBoo19 }] = useSound(BooSound19, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo20, { stop: stopBoo20 }] = useSound(BooSound20, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo21, { stop: stopBoo21 }] = useSound(BooSound21, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo22, { stop: stopBoo22 }] = useSound(BooSound22, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo23, { stop: stopBoo23 }] = useSound(BooSound23, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo24, { stop: stopBoo24 }] = useSound(BooSound24, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo25, { stop: stopBoo25 }] = useSound(BooSound25, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
   const [playBoo26, { stop: stopBoo26 }] = useSound(BooSound26, {
-    volume: Math.random() * (maxVolume - minVolume) + minVolume
+    volume: getRandVolume()
   })
 
   players.push(playBoo1)
