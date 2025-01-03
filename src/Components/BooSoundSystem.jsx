@@ -30,8 +30,8 @@ import useSound from 'use-sound'
 import { useState } from 'react'
 
 const BooSoundSystem = ({ children }) => {
-  const maxVolume = 0.55
-  const minVolume = 0.45
+  const maxVolume = 0.45
+  const minVolume = 0.15
 
   const players = []
   const stoppers = []
