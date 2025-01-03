@@ -1,3 +1,8 @@
+// Hooks
+import useSound from 'use-sound'
+import { useState } from 'react'
+import { useIsTouchDevice } from '../Hooks/useIsTouchDevice'
+
 // Sound files
 import BooSound1 from '../Assets/Sounds/BooSounds/boo-01.mp3'
 import BooSound2 from '../Assets/Sounds/BooSounds/boo-02.mp3'
@@ -26,15 +31,15 @@ import BooSound24 from '../Assets/Sounds/BooSounds/boo-24.mp3'
 import BooSound25 from '../Assets/Sounds/BooSounds/boo-25.mp3'
 import BooSound26 from '../Assets/Sounds/BooSounds/boo-26.mp3'
 
-import useSound from 'use-sound'
-import { useState } from 'react'
-
 const BooSoundSystem = ({ children }) => {
+  const isTouchDevice = useIsTouchDevice()
+
   const maxVolume = 0.45
   const minVolume = 0.15
 
   const players = []
   const stoppers = []
+
   const [playBoo1, { stop: stopBoo1 }] = useSound(BooSound1, {
     volume: Math.random() * (maxVolume - minVolume) + minVolume
   })
@@ -182,7 +187,7 @@ const BooSoundSystem = ({ children }) => {
     setPreviousSoundIndex(nextSoundIndex)
   }
 
-  return <div onMouseOver={() => handlePlay()}>{children}</div>
+  return <div onMouseOver={() => isTouchDevice ? null : handlePlay()} onClick={() => handlePlay()}>{children}</div>
 }
 
 export default BooSoundSystem

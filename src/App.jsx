@@ -25,11 +25,11 @@ import WinSound from "./Assets/Sounds/8-bit-victory-sound-101319.mp3";
 import { ReactComponent as EasterEggTopRightIcon } from "./Assets/Icons/easter-egg-design.svg";
 import { motion } from "framer-motion";
 import KonamiModal from "./Components/KonamiModal";
+import BooSoundSystem from "./Components/BooSoundSystem";
 
 // Hooks
 import useSound from "use-sound";
 import { useState } from "react";
-import BooSoundSystem from "./Components/BooSoundSystem";
 
 const theme = createTheme({});
 const useStyles = makeStyles((theme) => ({
@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Sonsie One",
     position: "absolute",
     color: Palette.main.lightBlue,
-    width: "2rem",
+    width: "auto",
     right: "10vw",
     bottom: "5vh",
   },
